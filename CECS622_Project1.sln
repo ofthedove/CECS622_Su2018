@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.27703.2000
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CECS622_Project1", "CECS622_Project1\CECS622_Project1.csproj", "{2233323E-4BCD-47D5-9831-405A46909A04}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CECS622_Project1Tests", "CECS622_Project1Tests\CECS622_Project1Tests.csproj", "{0034F32D-8225-4B4D-9DAA-3A2A33C0E79A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{2233323E-4BCD-47D5-9831-405A46909A04}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2233323E-4BCD-47D5-9831-405A46909A04}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2233323E-4BCD-47D5-9831-405A46909A04}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0034F32D-8225-4B4D-9DAA-3A2A33C0E79A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0034F32D-8225-4B4D-9DAA-3A2A33C0E79A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0034F32D-8225-4B4D-9DAA-3A2A33C0E79A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0034F32D-8225-4B4D-9DAA-3A2A33C0E79A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
