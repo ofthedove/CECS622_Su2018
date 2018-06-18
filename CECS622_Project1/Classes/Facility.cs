@@ -41,13 +41,13 @@ namespace CECS622_Project1.Classes
         double q2_waitTime = 0;
         int numDepartures = 0;
 
-        double Server1Utilization { get { return s1_utilTime / (double)END_TIME; } }
-        double Server2Utilization { get { return s2_utilTime / (double)END_TIME; } }
-        double MaxLengthQueue1 { get { return q1_maxLen; } }
-        double MaxLengthQueue2 { get { return q2_maxLen; } }
-        double AverageWaitQueue1 { get { return q1_waitTime / (double)numDepartures; } }
-        double AverageWaitQueue2 { get { return q2_waitTime / (double)numDepartures; } }
-        int NumberDepartures { get { return numDepartures; } }
+        public double Server1Utilization { get { return s1_utilTime / (double)END_TIME; } }
+        public double Server2Utilization { get { return s2_utilTime / (double)END_TIME; } }
+        public double MaxLengthQueue1 { get { return q1_maxLen; } }
+        public double MaxLengthQueue2 { get { return q2_maxLen; } }
+        public double AverageWaitQueue1 { get { return q1_waitTime / (double)numDepartures; } }
+        public double AverageWaitQueue2 { get { return q2_waitTime / (double)numDepartures; } }
+        public int NumberDepartures { get { return numDepartures; } }
 
         public Facility()
         {
@@ -60,6 +60,7 @@ namespace CECS622_Project1.Classes
             double deltaTime = 0;
 
             // pre-load first arrival
+            AddNextArrival();
 
             while (running)
             {

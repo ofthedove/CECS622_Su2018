@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CECS622_Project1.Classes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,24 @@ namespace CECS622_Project1
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Facility f = new Facility();
+            f.RunSimulation();
+
+            string info = "";
+
+            info += "Utilization S1    : " + f.Server1Utilization + "\r\n";
+            info += "Utilization S2    : " + f.Server2Utilization + "\r\n";
+            info += "Max Queue S1      : " + f.MaxLengthQueue1 + "\r\n";
+            info += "Max Queue S2      : " + f.MaxLengthQueue2 + "\r\n";
+            info += "Average Wait S1   : " + f.AverageWaitQueue1 + "\r\n";
+            info += "Average Wait S2   : " + f.AverageWaitQueue2 + "\r\n";
+            info += "Number Departures : " + f.NumberDepartures + "\r\n";
+
+            outputText.Text = info;
         }
     }
 }
