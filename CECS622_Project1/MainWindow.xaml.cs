@@ -43,9 +43,9 @@ namespace CECS622_Project1
             info += "Average Wait S2   : " + f.AverageWaitQueue2 + "\r\n";
             info += "Number Departures : " + f.NumberDepartures + "\r\n";
 
-            outputText.Text = info;
+            statsTextBox.Text = info;
 
-            logDisp.ItemsSource = f.Log;
+            FELLogListView.ItemsSource = f.Log;
         }
     }
 }
