@@ -7,8 +7,34 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="211*"/>
+            <RowDefinition Height="208*"/>
+        </Grid.RowDefinitions>
         <Button Content="Button" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
-        <TextBox x:Name="outputText" Margin="90,10,10,10" TextWrapping="Wrap" Text="TextBox"/>
+        <TextBox x:Name="outputText" Margin="10,35,0,10" TextWrapping="Wrap" Text="TextBox" HorizontalAlignment="Left" Width="174" Grid.RowSpan="2"/>
+        <ListView Name="logDisp" Margin="189,10,10,10" Grid.RowSpan="2">
+            <ListView.View>
+                <GridView AllowsColumnReorder="false"
+                          ColumnHeaderToolTip="Simulation Steps">
+
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=ClockTime}" 
+                      Header="Clock" Width="50"/>
+
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=Queue1Status}" 
+                      Header="Queue 1" Width="75"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=Server1Status}" 
+                      Header="Server 1" Width="75"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=Queue2Status}" 
+                      Header="Queue 2" Width="75"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=Server2Status}" 
+                      Header="Server 2" Width="75"/>
+
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=FELContents}" 
+                      Header="Future Event List" Width="Auto"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
 
     </Grid>
 </Window>

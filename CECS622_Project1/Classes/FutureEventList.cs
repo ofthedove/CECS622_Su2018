@@ -44,6 +44,18 @@ namespace CECS622_Project1.Classes
             return eventList.First().Time;
         }
 
+        public override string ToString()
+        {
+            string returnString = "";
+
+            foreach(Event e in eventList)
+            {
+                returnString += e.Type.ToString()[0] + " " + e.Time.ToString("0.0000").PadLeft(8, ' ') + "   ";
+            }
+
+            return returnString;
+        }
+
         public class FEListEmptyException : ApplicationException { }
     }
 }

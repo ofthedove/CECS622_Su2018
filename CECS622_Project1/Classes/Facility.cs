@@ -40,6 +40,7 @@ namespace CECS622_Project1.Classes
         double q1_waitTime = 0;
         double q2_waitTime = 0;
         int numDepartures = 0;
+        List<StatusItem> log = new List<StatusItem>();
 
         public double Server1Utilization { get { return s1_utilTime / (double)END_TIME; } }
         public double Server2Utilization { get { return s2_utilTime / (double)END_TIME; } }
@@ -48,6 +49,7 @@ namespace CECS622_Project1.Classes
         public double AverageWaitQueue1 { get { return q1_waitTime / (double)numDepartures; } }
         public double AverageWaitQueue2 { get { return q2_waitTime / (double)numDepartures; } }
         public int NumberDepartures { get { return numDepartures; } }
+        public List<StatusItem> Log { get { return log; } }
 
         public Facility()
         {
@@ -64,9 +66,13 @@ namespace CECS622_Project1.Classes
 
             while (running)
             {
+                // Do Logging
+                StatusItem stat = new StatusItem() { ClockTime = curTime, Queue1Status = queue1, Queue2Status = queue2, Server1Status = server1, Server2Status = server2, FELContents = FEL.ToString() };
+                log.Add(stat);
+
                 // Jump to next event
-                deltaTime = FEL.NextEventTime();
-                curTime += deltaTime;
+                deltaTime = FEL.NextEventTime() - curTime;
+                curTime = FEL.NextEventTime();
 
                 // Update Statisitcs
                 s1_utilTime += server1 ? deltaTime : 0;

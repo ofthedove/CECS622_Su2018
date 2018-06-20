@@ -70,6 +70,7 @@
     <Compile Include="Classes\Event.cs" />
     <Compile Include="Classes\Facility.cs" />
     <Compile Include="Classes\FutureEventList.cs" />
+    <Compile Include="Classes\StatusItem.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>

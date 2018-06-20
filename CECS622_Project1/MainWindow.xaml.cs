@@ -21,6 +21,8 @@ namespace CECS622_Project1
     /// </summary>
     public partial class MainWindow : Window
     {
+        public List<StatusItem> log;
+
         public MainWindow()
         {
             InitializeComponent();
@@ -42,6 +44,8 @@ namespace CECS622_Project1
             info += "Number Departures : " + f.NumberDepartures + "\r\n";
 
             outputText.Text = info;
+
+            logDisp.ItemsSource = f.Log;
         }
     }
 }
